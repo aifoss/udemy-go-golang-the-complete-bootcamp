@@ -1,0 +1,168 @@
+// ---------------------------------------------------------
+// EXERCISE: Refactor
+//
+//  Goal is refactoring the clock project by moving some of its parts to
+//  a new file in the same package.
+//
+//  1. Create a new file: placeholders.go
+//  2. Move the placeholder type to placeholder.go
+//  3. Move all the placeholders (zero to nine and the colon) to placeholder.go
+//  4. Move the digits array to placeholders.go
+//
+// HINT
+//  + placeholders.go file should belong to main package as well
+//
+//    To remember how to do so: Rewatch the "PART I — Packages, Scopes and Importing"
+//    section.
+//
+//  + Short declaration won't work in the package scope.
+//    Remember why by watching: "Short Declaration: Package Scope" lecture
+//
+//  + If you receive the following error and you don't know what to do watch:
+//    "Packages - Learn how to run multiple files" lecture.
+//
+//    # command-line-arguments
+//    undefined: placeholder
+//    undefined: colon
+//
+// EXPECTED OUTPUT
+//  The same output before the refactoring.
+// ---------------------------------------------------------
+
+// ---------------------------------------------------------
+// EXERCISE: Set an Alarm
+//
+//  Goal is printing " ALARM! " every 10 seconds.
+//
+// EXPECTED OUTPUT
+//
+//     ██   ███       ███  ██        ███  ███
+//      █     █   ░     █   █    ░     █  █ █
+//      █   ███       ███   █        ███  ███
+//      █   █     ░     █   █    ░     █    █
+//     ███  ███       ███  ███       ███  ███
+//
+//          ███  █    ███  ██   █ █   █
+//          █ █  █    █ █  █ █  ███   █
+//          ███  █    ███  ██   █ █   █
+//          █ █  █    █ █  █ █  █ █
+//          █ █  ███  █ █  █ █  █ █   █
+//
+//     ██   ███       ███  ██        █ █  ██
+//      █     █   ░     █   █    ░   █ █   █
+//      █   ███       ███   █        ███   █
+//      █   █     ░     █   █    ░     █   █
+//     ███  ███       ███  ███         █  ███
+//
+// HINTS
+//
+//  <<< BEWARE THE SPOILER! >>>
+//
+//  I recommend you to first solve the exercise yourself before reading the
+//  following hint.
+//
+//
+//  + You can create a new array named alarm with the same length of the
+//    clocks array, so you can copy the alarm array to the clocks array
+//    every 10 seconds.
+//
+// ---------------------------------------------------------
+
+// ---------------------------------------------------------
+// EXERCISE: Add Split Seconds
+//
+//  Your goal is adding the split second to the clock. A split second is
+//  1/10th of a second.
+//
+//  1. Find the current split second
+//  2. Add dot character to the clock (as in the expected output)
+//  3. Add the split second digit to the clock
+//  4. Blink the dot every two seconds (just like the separators)
+//  5. Update the clock every 1/10th of a second, instead of every second.
+//     (Update the clock every 100 millliseconds)
+//
+// HINTS
+//   + You can find the split second using Nanosecond method of the Time type.
+//     https://golang.org/pkg/time/#Time.Nanosecond
+//
+//   + A split second is the first digit of the Nanosecond.
+//
+//   + Remember: time.Second is an integer constant, so it can be divided
+//               with a number.
+//
+//     https://golang.org/pkg/time/#Time.Second
+//
+// EXPECTED OUTPUT
+//     Note that, clock is updated every split second instead of a second.
+//
+//     Separators are displayed (second is an odd number):
+//
+//     ██   ██        ███  ██        ██   ███       ███
+//      █    █    ░   █     █    ░    █     █       █ █
+//      █    █        ███   █         █     █       █ █
+//      █    █    ░     █   █    ░    █     █       █ █
+//     ███  ███       ███  ███       ███    █   ░   ███
+//
+//     ██   ██        ███  ██        ██   ███       ██
+//      █    █    ░   █     █    ░    █     █        █
+//      █    █        ███   █         █     █        █
+//      █    █    ░     █   █    ░    █     █        █
+//     ███  ███       ███  ███       ███    █   ░   ███
+//
+//     ██   ██        ███  ██        ██   ███       ███
+//      █    █    ░   █     █    ░    █     █         █
+//      █    █        ███   █         █     █       ███
+//      █    █    ░     █   █    ░    █     █       █
+//     ███  ███       ███  ███       ███    █   ░   ███
+//
+//     ██   ██        ███  ██        ██   ███       ███
+//      █    █    ░   █     █    ░    █     █         █
+//      █    █        ███   █         █     █       ███
+//      █    █    ░     █   █    ░    █     █         █
+//     ███  ███       ███  ███       ███    █   ░   ███
+//
+//     ██   ██        ███  ██        ██   ███       █ █
+//      █    █    ░   █     █    ░    █     █       █ █
+//      █    █        ███   █         █     █       ███
+//      █    █    ░     █   █    ░    █     █         █
+//     ███  ███       ███  ███       ███    █   ░     █
+//
+//     ██   ██        ███  ██        ██   ███       ███
+//      █    █    ░   █     █    ░    █     █       █
+//      █    █        ███   █         █     █       ███
+//      █    █    ░     █   █    ░    █     █         █
+//     ███  ███       ███  ███       ███    █   ░   ███
+//
+//     ██   ██        ███  ██        ██   ███       ███
+//      █    █    ░   █     █    ░    █     █       █
+//      █    █        ███   █         █     █       ███
+//      █    █    ░     █   █    ░    █     █       █ █
+//     ███  ███       ███  ███       ███    █   ░   ███
+//
+//     ██   ██        ███  ██        ██   ███       ███
+//      █    █    ░   █     █    ░    █     █         █
+//      █    █        ███   █         █     █         █
+//      █    █    ░     █   █    ░    █     █         █
+//     ███  ███       ███  ███       ███    █   ░     █
+//
+//     ██   ██        ███  ██        ██   ███       ███
+//      █    █    ░   █     █    ░    █     █       █ █
+//      █    █        ███   █         █     █       ███
+//      █    █    ░     █   █    ░    █     █       █ █
+//     ███  ███       ███  ███       ███    █   ░   ███
+//
+//     ██   ██        ███  ██        ██   ███       ███
+//      █    █    ░   █     █    ░    █     █       █ █
+//      █    █        ███   █         █     █       ███
+//      █    █    ░     █   █    ░    █     █         █
+//     ███  ███       ███  ███       ███    █   ░   ███
+//
+//     Separators are not displayed (second is an even number):
+//
+//     ██   ██        ███  ██        ██   ███       ███
+//      █    █        █     █         █   █ █       █ █
+//      █    █        ███   █         █   ███       █ █
+//      █    █          █   █         █   █ █       █ █
+//     ███  ███       ███  ███       ███  ███       ███
+//
+// ---------------------------------------------------------
